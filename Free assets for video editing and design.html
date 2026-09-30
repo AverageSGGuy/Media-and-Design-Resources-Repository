@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Free assets for video editing and design</title>
+<meta name="description" content="A drawer of free textures, transitions, illustrations, video clips, music, fonts and tools for designers and video editors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --desk:#E3E7EE;
+  --ink:#1d1c1b;
+  --ink-soft:#4f4c48;
+  --bar:rgba(227,231,238,.93);
+  --cab:#BCC4D3;
+  --cab-front:#D1D7E3;
+  --paper-ink:#1f1c19;
+  --paper-soft:#4b4640;
+  --font:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,"Songti SC","Noto Serif CJK SC","Noto Serif SC",serif;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --clip-img:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-2 -2 18 48'%3E%3Cpath d='M7 34V10a3.5 3.5 0 0 1 7 0V38a7 7 0 0 1-14 0V6a5 5 0 0 1 10 0V30' fill='none' stroke='%237d8592' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --desk:#272625;
+    --ink:#f3f0ea;
+    --ink-soft:#bdb8b0;
+    --bar:rgba(39,38,37,.93);
+    --cab:#151413;
+    --cab-front:#353331;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --desk:#272625;
+  --ink:#f3f0ea;
+  --ink-soft:#bdb8b0;
+  --bar:rgba(39,38,37,.93);
+  --cab:#151413;
+  --cab-front:#353331;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+[hidden]{display:none!important}
+body{
+  margin:0;
+  background-color:var(--desk);
+  background-image:var(--grain);
+  color:var(--ink);
+  font-family:var(--font);
+  font-size:17px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+button{font-family:inherit}
+
+/* ---------- Hero ---------- */
+.hero{
+  max-width:1180px;
+  margin:0 auto;
+  padding:clamp(40px,8vw,96px) clamp(18px,4vw,40px) 12px;
+  display:grid;
+  grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);
+  gap:36px 48px;
+  align-items:end;
+}
+.hero h1{
+  margin:0;
+  font-weight:400;
+  font-size:clamp(3rem,9.5vw,7.2rem);
+  line-height:.95;
+  letter-spacing:-.03em;
+}
+.hero-note{
+  position:relative;
+  justify-self:end;
+  width:min(100%,340px);
+  padding:36px 26px 26px;
+  background-color:#FDFCF9;
+  background-image:var(--grain);
+  color:#1f1c19;
+  font-size:clamp(21px,2.6vw,25px);
+  font-style:italic;
+  line-height:1.25;
+  transform:rotate(1.8deg);
+  box-shadow:0 1px 1px rgba(0,0,0,.25),0 18px 30px -12px rgba(0,0,0,.45);
+}
+.hero-note p{margin:0}
+.clip{
+  position:absolute;
+  top:-16px;
+  left:20px;
+  width:17px;
+  height:46px;
+  background:var(--clip-img) center/contain no-repeat;
+  transform:rotate(4deg);
+  pointer-events:none;
+  z-index:3;
+}
+.search{grid-column:1/-1}
+.search input{
+  display:block;
+  width:min(100%,560px);
+  padding:14px 18px;
+  border:0;
+  border-radius:4px;
+  background-color:#FDFCF9;
+  color:#1f1c19;
+  font:500 19px/1.3 var(--font);
+  box-shadow:0 1px 1px rgba(0,0,0,.25),0 12px 22px -12px rgba(0,0,0,.45);
+}
+.search input::placeholder{color:#6b665f;font-weight:400;font-style:italic}
+.search input:focus-visible{outline:3px solid #3350D8;outline-offset:3px}
+.status{margin:12px 0 0;color:var(--ink-soft);font-size:16px;min-height:1.5em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Bar shown while a folder is open ---------- */
+.openbar{
+  position:sticky;
+  top:env(safe-area-inset-top,0px);
+  z-index:60;
+  height:0;
+}
+.openbar-inner{
+  position:absolute;
+  left:0;right:0;top:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:8px clamp(18px,4vw,40px);
+  background:var(--bar);
+  -webkit-backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);
+  box-shadow:0 1px 0 rgba(0,0,0,.18);
+}
+.ob-tab{
+  padding:6px 16px;
+  border-radius:10px;
+  background:var(--f);
+  color:var(--fi);
+  font-size:18px;
+  font-weight:500;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  min-width:0;
+}
+.ob-close{
+  flex:none;
+  min-height:44px;
+  padding:0 8px;
+  border:0;
+  background:none;
+  color:var(--ink);
+  font-size:17px;
+  text-decoration:underline;
+  text-underline-offset:4px;
+  cursor:pointer;
+}
+.ob-close:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+
+/* ---------- The drawer ---------- */
+.cab-wrap{
+  max-width:1180px;
+  margin:0 auto;
+  padding:78px clamp(18px,4vw,40px) 70px;
+}
+.cabinet{
+  padding:30px clamp(12px,2.5vw,28px) 26px;
+  background-color:var(--cab);
+  background-image:var(--grain);
+  border-radius:26px 26px 0 0;
+  box-shadow:inset 0 16px 34px -12px rgba(0,0,0,.5);
+}
+.cabinet-front{
+  position:relative;
+  height:72px;
+  background-color:var(--cab-front);
+  background-image:var(--grain);
+  border-radius:0 0 22px 22px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 26px 40px -22px rgba(0,0,0,.6);
+}
+.handle{
+  position:absolute;
+  left:50%;top:50%;
+  width:150px;height:22px;
+  transform:translate(-50%,-50%);
+  border-radius:12px;
+  background:linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,.08));
+  box-shadow:inset 0 2px 4px rgba(0,0,0,.35),0 1px 0 rgba(255,255,255,.25);
+}
+
+/* ---------- Folders ---------- */
+.folder{
+  position:relative;
+  scroll-margin-top:calc(env(safe-area-inset-top,0px) + 124px);
+}
+.folder + .folder{margin-top:-6px}
+.folder-body{
+  --tab-w:min(330px,calc(100% - 80px));
+  position:relative;
+  min-height:72px;
+  background-color:var(--f);
+  background-image:var(--grain),linear-gradient(rgba(0,0,0,.14),rgba(0,0,0,0) 90px);
+  border-radius:20px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 -8px 18px -10px rgba(0,0,0,.55);
+  transition:transform .18s ease;
+}
+.folder:not(.open) .folder-body{cursor:pointer}
+.folder:not(.open) .folder-body:hover{transform:translateY(-5px)}
+.folder-body::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:64px;
+  border-radius:10px 10px 20px 20px;
+  background-color:var(--f);
+  background-image:var(--grain),linear-gradient(rgba(255,255,255,.16),rgba(255,255,255,.16));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 -14px 22px -10px rgba(0,0,0,.35);
+  z-index:3;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .3s;
+}
+.folder.open .folder-body::after{opacity:1}
+.tab{
+  position:absolute;
+  top:-51px;
+  left:calc(40px + (100% - var(--tab-w) - 80px) * var(--pos));
+  width:var(--tab-w);
+  height:52px;
+  margin:0;
+  border-radius:16px 16px 0 0;
+  background-color:var(--f);
+  background-image:var(--grain);
+  color:var(--fi);
+}
+.tab::before,.tab::after{content:"";position:absolute;bottom:0;width:16px;height:16px;pointer-events:none}
+.tab::before{left:-16px;background:radial-gradient(circle at 0 0,transparent 15.5px,var(--f) 16px)}
+.tab::after{right:-16px;background:radial-gradient(circle at 100% 0,transparent 15.5px,var(--f) 16px)}
+.tab button{
+  all:unset;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:100%;
+  height:100%;
+  padding:0 20px;
+  cursor:pointer;
+  color:inherit;
+  font-family:var(--font);
+}
+.tab button:focus-visible{outline:3px solid currentColor;outline-offset:-7px;border-radius:14px 14px 0 0}
+.tab .name{
+  flex:1;
+  min-width:0;
+  font-size:clamp(20px,3.6vw,27px);
+  font-weight:500;
+  line-height:1.1;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.tab .count{
+  flex:none;
+  padding:0 9px;
+  border:1.5px solid currentColor;
+  border-radius:99px;
+  font-size:15px;
+  font-weight:500;
+  line-height:1.4;
+}
+.tab .caret{
+  flex:none;
+  width:9px;height:9px;
+  border-right:2px solid currentColor;
+  border-bottom:2px solid currentColor;
+  transform:rotate(45deg) translateY(-2px);
+  transition:transform .25s;
+}
+.folder.open .caret{transform:rotate(-135deg)}
+
+/* Open / close */
+.panel{
+  display:grid;
+  grid-template-rows:0fr;
+  visibility:hidden;
+  transition:grid-template-rows .45s cubic-bezier(.2,.7,.2,1),visibility 0s linear .45s;
+}
+.folder.open .panel{
+  grid-template-rows:1fr;
+  visibility:visible;
+  transition:grid-template-rows .45s cubic-bezier(.2,.7,.2,1),visibility 0s;
+}
+.folder.instant .panel,.folder.instant .folder-body::after{transition:none!important}
+.panel-clip{min-height:0;overflow:clip}
+.panel-in{padding:40px clamp(14px,3vw,36px) 100px}
+.folder-note{
+  max-width:640px;
+  margin:0 auto 30px;
+  color:var(--fi);
+  font-size:19px;
+  font-style:italic;
+}
+
+/* ---------- Stacked papers ---------- */
+.stack{
+  list-style:none;
+  max-width:640px;
+  margin:0 auto;
+  padding:0 0 24px;
+}
+.slot{
+  position:relative;
+  margin-bottom:-24px;
+  transform:translateX(var(--x)) rotate(var(--r));
+  transition:transform .18s ease;
+  filter:drop-shadow(0 -3px 4px rgba(0,0,0,.2)) drop-shadow(0 6px 8px rgba(0,0,0,.16));
+}
+.slot:hover,.slot:focus-within{
+  z-index:2;
+  transform:translateX(var(--x)) translateY(-6px) rotate(0deg);
+}
+.paper{
+  position:relative;
+  display:block;
+  padding:22px 26px 46px;
+  border-radius:3px;
+  background-color:var(--pc);
+  background-image:var(--grain),var(--pattern,none);
+  background-size:160px 160px;
+  color:var(--paper-ink);
+  text-decoration:none;
+}
+.v-sheet{--pc:#FDFCF9}
+.v-graph{
+  --pc:#F7EEB8;
+  --pattern:linear-gradient(rgba(60,90,160,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(60,90,160,.15) 1px,transparent 1px);
+  background-size:160px 160px,18px 18px,18px 18px;
+}
+.v-lined{
+  --pc:#EEF3FB;
+  --pattern:repeating-linear-gradient(transparent 0 27px,rgba(70,110,190,.18) 27px 28px);
+}
+.v-note{--pc:#F6D5DA}
+.p-head{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:2px 18px;
+}
+.p-title{
+  margin:0;
+  font-size:26px;
+  font-weight:500;
+  line-height:1.15;
+  letter-spacing:-.01em;
+}
+.p-url{
+  color:var(--paper-soft);
+  font-size:16px;
+  font-style:italic;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+  overflow-wrap:anywhere;
+}
+.slot:hover .p-url{text-decoration-thickness:2px}
+.p-desc{margin:6px 0 0;color:var(--paper-soft);font-size:18px;line-height:1.35}
+.paper:focus-visible{outline:3px solid #111;outline-offset:3px}
+@supports selector(:has(*)){
+  .paper:focus-visible{outline:none}
+  .slot:has(.paper:focus-visible){
+    outline:3px solid #111;
+    outline-offset:4px;
+    box-shadow:0 0 0 4px #fff;
+  }
+}
+
+/* ---------- Footer ---------- */
+.foot{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 clamp(18px,4vw,40px) 80px;
+  color:var(--ink-soft);
+  font-size:16px;
+}
+.foot p{margin:0;max-width:60ch}
+noscript p{max-width:1180px;margin:0 auto;padding:20px clamp(18px,4vw,40px)}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr}
+  .hero-note{justify-self:start}
+  .paper{padding:20px 20px 44px}
+  .p-title{font-size:24px}
+  .cabinet-front{height:60px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>Free assets for video editing and design</h1>
+  <aside class="hero-note" aria-label="About this page">
+    <span class="clip" aria-hidden="true"></span>
+    <p>Free links for designers and video editors. Open a folder and take what you need.</p>
+  </aside>
+  <div class="search">
+    <label class="sr" for="q">Search links</label>
+    <input id="q" type="search" placeholder="Search links, like “grain” or “font”" autocomplete="off">
+    <p class="status" id="status" aria-live="polite"></p>
+  </div>
+</header>
+
+<div class="openbar" id="openbar">
+  <div class="openbar-inner" id="openbar-inner" hidden>
+    <span class="ob-tab" id="ob-tab"></span>
+    <button type="button" class="ob-close" id="ob-close">Close folder</button>
+  </div>
+</div>
+
+<noscript><p>This page needs JavaScript to show the folders.</p></noscript>
+
+<main class="cab-wrap">
+  <div class="cabinet" id="drawer"></div>
+  <div class="cabinet-front" aria-hidden="true"><span class="handle"></span></div>
+</main>
+
+<footer class="foot">
+  <p>Licenses change. Check each site's terms before you use a file in client or paid work.</p>
+</footer>
+
+<script>
+/* To add a link, add a line to the folder it belongs in.
+   t = title, u = URL, d = description (optional). */
+const FOLDERS = [
+  { id:"textures", name:"Textures and overlays", color:"#EC7B66", ink:"#241612", pos:0.05, links:[
+    { t:"Texture Labs", u:"https://texturelabs.org/", d:"Free textures (no motion)" },
+    { t:"iNeedFX", u:"https://ineedfx.com/", d:"Free light leaks and film grain overlays" },
+    { t:"Morra", u:"https://morra.gumroad.com/l/roundedcorners", d:"Round edges overlay" },
+    { t:"PremiumBeat", u:"https://www.premiumbeat.com/blog/free-animated-textures/", d:"Animated textures" },
+    { t:"Design Syndrome", u:"https://designsyndrome.gumroad.com/", d:"HYPE paper and plastic texture" },
+    { t:"Resource Boy", u:"https://resourceboy.com/textures/", d:"Free textures (no motion)" },
+    { t:"Film grain pack (8K)", u:"https://www.dropbox.com/s/luw0b3kggmq0gpw/Film-Grain-Textures-FREE-Pack-8K.zip?dl=0", d:"Free grain (no motion)" }
+  ]},
+  { id:"transitions", name:"Text animation and transitions", color:"#DDB35A", ink:"#241d0c", pos:0.55, links:[
+    { t:"Creative Flow Market", u:"https://creativeflowmarket.com/", d:"Paint transitions" },
+    { t:"Think Make Push", u:"https://thinkmakepush.com/p/28-film-burn-transitions/", d:"Film burn transitions" },
+    { t:"Cinepacks", u:"https://cinepacks.store/collections/packs", d:"Free transitions" },
+    { t:"Jitter", u:"https://jitter.video/templates/", d:"Text notification animation" },
+    { t:"PremiumBeat", u:"https://www.premiumbeat.com/blog/free-hand-drawn-animated-shapes/", d:"Hand-drawn symbols and shapes" },
+    { t:"Mister Horse", u:"https://misterhorse.com/product-manager", d:"Free text transition plugin" },
+    { t:"Typeface Animator", u:"https://www.typefaceanimator.com/", d:"Text animation" }
+  ]},
+  { id:"illustrations", name:"Illustrations and icons", color:"#9BBAE4", ink:"#12202f", pos:0.22, links:[
+    { t:"Irasutoya", u:"https://www.irasutoya.com/", d:"Japanese cartoon drawings" },
+    { t:"Flaticon", u:"https://www.flaticon.com/", d:"Vector icons" },
+    { t:"CleanPNG", u:"https://www.cleanpng.com/", d:"PNG images" },
+    { t:"Tyoudoii Illust", u:"https://tyoudoii-illust.com/", d:"Drawings and icons" },
+    { t:"Vector Shelf", u:"https://vectorshelf.com/", d:"Drawings and icons" },
+    { t:"Loose Drawing", u:"https://loosedrawing.com/", d:"Drawings and icons" },
+    { t:"Open Peeps", u:"https://www.openpeeps.com/", d:"Drawings, free human cartoons" },
+    { t:"Noto Emoji Animation", u:"https://googlefonts.github.io/noto-emoji-animation/", d:"Emoji animation" },
+    { t:"SVG Icon", u:"https://svgicon.net/", d:"Doodles" },
+    { t:"Heritage Type", u:"https://www.heritagetype.com/pages/free-vintage-illustrations", d:"Free vintage illustrations" },
+    { t:"Illust Center", u:"https://illustcenter.com/", d:"Free illustrations" },
+    { t:"Humaaans", u:"https://www.humaaans.com/", d:"Free human cartoons" },
+    { t:"Thiings", u:"https://www.thiings.co/things", d:"3D icons" }
+  ]},
+  { id:"video", name:"Video clips", color:"#E7A6B4", ink:"#2b141a", pos:0.9, links:[
+    { t:"PlayPhrase.me", u:"https://www.playphrase.me/", d:"Exact lines from movies (5 for free)" },
+    { t:"Mixkit", u:"https://mixkit.co/free-stock-video/", d:"Stock videos" },
+    { t:"Life of Vids", u:"https://lifeofvids.com/#/", d:"Stock videos" },
+    { t:"I Green Screen Things", u:"https://www.tiktok.com/@igreenscreenthings?lang=en", d:"Free meme clips" },
+    { t:"Videezy", u:"https://www.videezy.com/", d:"Stock footage" },
+    { t:"Yarn", u:"https://getyarn.io/", d:"Exact phrase from drama / movie" },
+    { t:"Green Screen Memes", u:"https://greenscreenmemes.com/", d:"Green screen memes" },
+    { t:"My Meme Videos", u:"https://mymemevideos.com/video-library/", d:"Original meme download" },
+    { t:"Transitional Hooks", u:"https://transitionalhooks.com/", d:"The funny video at the front before guy gets hit" },
+    { t:"Destockd", u:"https://destockd.com/#/", d:"Public domain videos by the US government" }
+  ]},
+  { id:"music", name:"Music and SFX", note:"[double check licensing]", color:"#3350D8", ink:"#ffffff", pos:0.4, links:[
+    { t:"Mixkit", u:"https://mixkit.co/free-stock-music/", d:"Free music" },
+    { t:"Zapsplat", u:"https://www.zapsplat.com/sound-effect-categories/", d:"Sound effects" },
+    { t:"MyInstants", u:"https://www.myinstants.com/en/index/us/", d:"TikTok sound effects" },
+    { t:"Freesound", u:"https://freesound.org/", d:"Sound effects" },
+    { t:"ToSound", u:"https://www.tosound.com/", d:"Free Chinese sound effects, free music" },
+    { t:"Chosic", u:"https://www.chosic.com/free-music/all/?sort=&attribution=no&duration=", d:"Free music" },
+    { t:"Aigei", u:"https://www.aigei.com/music/song/cc0_commercial_unlim_6", d:"Free music" },
+    { t:"Soundscrate", u:"https://soundscrate.com/royalty-free-music-categories.html", d:"Free music" },
+    { t:"Meme Sound Effects", u:"https://memesoundeffects.com/sound-library/", d:"Free sound effects" },
+    { t:"Uppbeat", u:"https://uppbeat.io", d:"Free music" },
+    { t:"NCS", u:"https://ncs.io/", d:"Free music but need credit" }
+  ]},
+  { id:"fonts", name:"Fonts", note:"【华⽂字体请留意如果字体商⽤免费】", noteLang:"zh", color:"#94BFA9", ink:"#12251c", pos:1, links:[
+    { t:"Free Faces Gallery", u:"https://www.freefaces.gallery/" },
+    { t:"Collletttivo", u:"https://www.collletttivo.it/typefaces", d:"English fonts" },
+    { t:"UIIIUIII", u:"https://uiiiuiii.com/tool/typeface", d:"Chinese fonts" },
+    { t:"Ziyouziti", u:"https://ziyouziti.com/index-index-all.html", d:"Chinese fonts" },
+    { t:"Maoken", u:"https://www.maoken.com/", d:"Free Chinese and English" },
+    { t:"Fonts.net.cn", u:"https://www.fonts.net.cn/commercial-free/fonts-zh-1.html", d:"Free Chinese" },
+    { t:"100font", u:"https://www.100font.com/", d:"Free Chinese" }
+  ]},
+  { id:"tools", name:"Tools", color:"#B9A6E0", ink:"#1e1533", pos:0.1, links:[
+    { t:"Gyroflow", u:"https://gyroflow.xyz/", d:"Image stabilisation" },
+    { t:"Landing Space", u:"https://landing.space/", d:"Y2K collage maker" }
+  ]},
+  { id:"resources", name:"Resources", color:"#58A0A6", ink:"#08202a", pos:0.7, links:[
+    { t:"Frameset", u:"https://frameset.app/stills", d:"Frames and shot size inspo" },
+    { t:"Eyecannndy", u:"https://www.eyecannndy.com/", d:"Filming and editing inspo" },
+    { t:"Jon Loomer", u:"https://www.jonloomer.com/tiktok-instagram-reels-safe-zones-templates/", d:"TikTok safe zone marker" },
+    { t:"Typographic Posters", u:"https://www.typographicposters.com/", d:"Free poster inspo" },
+    { t:"YT Ultra", u:"https://www.ytultra.com/en/youtube-video-downloader/", d:"YouTube video downloader" }
+  ]}
+];
+
+const ROT = [-1.1, 0.8, -0.5, 1.2, -0.9, 0.6, -1.3, 0.9];
+const OFF = [-6, 5, -2, 7, -5, 3, -7, 2];
+const LOOKS = ["sheet", "graph", "sheet", "lined", "note", "sheet", "graph", "lined"];
+
+const drawer = document.getElementById("drawer");
+const input = document.getElementById("q");
+const status = document.getElementById("status");
+const bar = document.getElementById("openbar");
+const barInner = document.getElementById("openbar-inner");
+const barTab = document.getElementById("ob-tab");
+const barClose = document.getElementById("ob-close");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function el(tag, cls, text){
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text != null) e.textContent = text;
+  return e;
+}
+function domain(u){ return new URL(u).hostname.replace(/^www\./, ""); }
+
+const records = [];
+const refs = [];
+let total = 0;
+let openIdx = -1;
+
+FOLDERS.forEach((f, fi) => {
+  const sec = el("section", "folder");
+  sec.id = f.id;
+  sec.setAttribute("aria-labelledby", f.id + "-h");
+  sec.style.cssText = "--f:" + f.color + ";--fi:" + f.ink + ";--pos:" + f.pos + ";z-index:" + (fi + 1);
+
+  const body = el("div", "folder-body");
+
+  const h = el("h2", "tab");
+  h.id = f.id + "-h";
+  const btn = el("button");
+  btn.type = "button";
+  btn.setAttribute("aria-expanded", "false");
+  btn.setAttribute("aria-controls", f.id + "-panel");
+  const count = el("span", "count", String(f.links.length));
+  const caret = el("span", "caret");
+  caret.setAttribute("aria-hidden", "true");
+  btn.append(el("span", "name", f.name), count, caret);
+  h.append(btn);
+  body.append(h);
+
+  const panel = el("div", "panel");
+  panel.id = f.id + "-panel";
+  panel.inert = true;
+  const clip = el("div", "panel-clip");
+  const inner = el("div", "panel-in");
+
+  if (f.note){
+    const note = el("p", "folder-note", f.note);
+    if (f.noteLang) note.lang = f.noteLang;
+    inner.append(note);
+  }
+
+  const ul = el("ul", "stack");
+  f.links.forEach((l, li) => {
+    const item = el("li", "slot");
+    item.style.setProperty("--r", ROT[(li * 5 + fi * 2) % ROT.length] + "deg");
+    item.style.setProperty("--x", OFF[(li * 3 + fi) % OFF.length] + "px");
+
+    const a = el("a", "paper v-" + LOOKS[(li + fi * 3) % LOOKS.length]);
+    a.href = l.u;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.setAttribute("aria-label", l.t + (l.d ? ". " + l.d : "") + ". Opens in a new tab.");
+
+    if (li === 0){
+      const c = el("span", "clip");
+      c.setAttribute("aria-hidden", "true");
+      a.append(c);
+    }
+
+    const head = el("div", "p-head");
+    head.append(el("h3", "p-title", l.t), el("span", "p-url", domain(l.u)));
+    a.append(head);
+    if (l.d) a.append(el("p", "p-desc", l.d));
+
+    item.append(a);
+    ul.append(item);
+    total++;
+    records.push({ item, ref: fi, hay: (l.t + " " + (l.d || "") + " " + domain(l.u) + " " + f.name).toLowerCase() });
+  });
+  inner.append(ul);
+  clip.append(inner);
+  panel.append(clip);
+  body.append(panel);
+  sec.append(body);
+  drawer.append(sec);
+
+  const r = { sec, body, btn, panel, count, name: f.name, color: f.color, ink: f.ink,
+              total: f.links.length, shown: f.links.length, open: false, forcedClosed: false };
+  refs.push(r);
+
+  btn.addEventListener("click", () => toggle(fi));
+  body.addEventListener("click", e => {
+    if (!r.open && !e.target.closest(".tab")) toggle(fi);
+  });
+});
+
+function searching(){ return input.value.trim() !== ""; }
+
+function setOpen(r, isOpen){
+  if (r.open === isOpen) return;
+  const closing = r.open && !isOpen;
+  if (closing) r.sec.classList.add("instant");
+  r.open = isOpen;
+  r.sec.classList.toggle("open", isOpen);
+  r.btn.setAttribute("aria-expanded", String(isOpen));
+  r.panel.inert = !isOpen;
+  if (closing){
+    void r.sec.offsetHeight;
+    r.sec.classList.remove("instant");
+  }
+}
+
+function refresh(){
+  const s = searching();
+  refs.forEach((r, i) => {
+    const shouldOpen = s ? (r.shown > 0 && !r.forcedClosed) : i === openIdx;
+    setOpen(r, shouldOpen);
+    r.sec.hidden = s && r.shown === 0;
+    r.count.textContent = s ? r.shown + " of " + r.total : String(r.total);
+  });
+  if (!s && openIdx > -1){
+    const r = refs[openIdx];
+    barInner.hidden = false;
+    barTab.textContent = r.name;
+    barTab.style.setProperty("--f", r.color);
+    barTab.style.setProperty("--fi", r.ink);
+  } else {
+    barInner.hidden = true;
+  }
+}
+
+function toggle(i){
+  const r = refs[i];
+  if (searching()){
+    r.forcedClosed = r.open;
+    refresh();
+    return;
+  }
+  if (openIdx === i){
+    openIdx = -1;
+    refresh();
+    r.sec.scrollIntoView({ block: "center", behavior: "auto" });
+    return;
+  }
+  openIdx = i;
+  refresh();
+  requestAnimationFrame(() => {
+    r.sec.scrollIntoView({ block: "start", behavior: reduceMotion ? "auto" : "smooth" });
+  });
+}
+
+barClose.addEventListener("click", () => { if (openIdx > -1) toggle(openIdx); });
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && openIdx > -1 && !searching() && document.activeElement !== input) toggle(openIdx);
+});
+
+/* Search */
+input.addEventListener("input", () => {
+  refs.forEach(r => r.forcedClosed = false);
+  const raw = input.value.trim();
+  const terms = raw.toLowerCase().split(/\s+/).filter(Boolean);
+  refs.forEach(r => r.shown = 0);
+  let shown = 0;
+  records.forEach(rec => {
+    const ok = terms.every(t => rec.hay.includes(t));
+    rec.item.hidden = !ok;
+    if (ok){ shown++; refs[rec.ref].shown++; }
+  });
+  if (!terms.length){
+    refs.forEach(r => r.shown = r.total);
+    status.textContent = total + " links in " + FOLDERS.length + " folders";
+  } else if (shown){
+    status.textContent = "Showing " + shown + " of " + total + " links";
+  } else {
+    status.textContent = "No links match “" + raw + "”. Try a shorter word, like “font” or “grain”.";
+  }
+  refresh();
+});
+status.textContent = total + " links in " + FOLDERS.length + " folders";
+refresh();
+</script>
+</body>
+</html>
