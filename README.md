@@ -1,85 +1,73 @@
-# Free Assets for Video Editing & Design
+<div align="center">
 
-Free links for designers and video editors. Open a folder and take what you need[cite: 1].
+# <font face="Newsreader, Georgia, serif" color="#1d1c1b">🗄 Media & Design Resources Repository</font>
 
-> **Note:** Licenses change. Check each site's terms before using a file in client or paid work[cite: 1].
+<sub><i><font face="Newsreader, Georgia, serif" color="#1d1c1b" size="4">Find what you need for your next project!</font></i></sub>
 
----
-
-## 📌 Quick Jump
-* [🎥 Video Footage & Templates](#-video-footage--templates)
-* [🎵 Audio & Sound Effects](#-audio--sound-effects)
-* [🖼️ Stock Photos & Textures](#️-stock-photos--textures)
-* [🎨 Vectors, Icons & Graphics](#-vectors-icons--graphics)
-* [🔤 Fonts & Typography](#-fonts--typography)
-
----
-
-## 🎥 Video Footage & Templates
-
-<details>
-<summary><b>Click to expand Video Assets</b></summary>
 <br>
 
-* **[Mixkit](https://mixkit.co/)** — Free stock video clips, video templates, and sound effects.
-* **[Pexels Video](https://www.pexels.com/videos/)** — Free stock footage for commercial and personal projects.
-* **[Coverr](https://coverr.co/)** — High-quality stock footage for background videos and edits.
-* **[Videvo](https://www.videvo.net/)** — Free stock video footage and motion graphics clips.
-
-</details>
+[![Launch Interactive Drawer](https://img.shields.io/badge/📂_Launch_Interactive_Drawer-EC7B66?style=for-the-badge&logoColor=white)](https://averagesgguy.github.io/Media-and-Design-Resources-Repository/)
 
 ---
 
-## 🎵 Audio & Sound Effects
+</div>
 
-<details>
-<summary><b>Click to expand Audio & SFX Assets</b></summary>
-<br>
+### <font face="Newsreader, Georgia, serif" color="#1d1c1b">💡 Why This Was Created</font>
 
-* **[Freesound](https://freesound.org/)** — Collaborative database of Creative Commons audio snippets and SFX.
-* **[Incompetech](https://incompetech.com/)** — Free royalty-free music by Kevin MacLeod (requires attribution).
-* **[YouTube Audio Library](https://www.youtube.com/audiolibrary)** — Royalty-free music and sound effects for creators.
+<font face="Newsreader, Georgia, serif" color="#1d1c1b">
 
-</details>
+There are so many talented designers and editors online sharing incredible free tools, textures, and assets. However, saving individual posts across social platforms makes it almost impossible to find things when you actually need them in the middle of a project.
 
----
+This collection originally started as a private Google Doc. To make it more organized and accessible—and to experiment with **vibe-coding** alongside AI tools like Claude and Gemini—it was transformed into an interactive web cabinet.
 
-## 🖼️️ Stock Photos & Textures
-
-<details>
-<summary><b>Click to expand Photo Assets</b></summary>
-<br>
-
-* **[Unsplash](https://unsplash.com/)** — High-resolution photos freely usable for commercial and non-commercial projects.
-* **[Pixabay](https://pixabay.com/)** — Stills, illustrations, and vector graphics.
-* **[Poly Haven](https://polyhaven.com/)** — Free 3D textures, HDRIs, and models.
-
-</details>
+</font>
 
 ---
 
-## 🎨 Vectors, Icons & Graphics
+### <font face="Newsreader, Georgia, serif" color="#1d1c1b">🧑‍💻 About the Author</font>
 
-<details>
-<summary><b>Click to expand Vector & Icon Assets</b></summary>
-<br>
+<font face="Newsreader, Georgia, serif" color="#1d1c1b">
 
-* **[SVG Repo](https://www.svgrepo.com/)** — Searchable library of free vector icons and SVGs.
-* **[Freepik](https://www.freepik.com/)** — Free vectors, PSDs, and graphic assets.
-* **[Iconify](https://iconify.design/)** — Unified open-source icon framework.
+Hi! I'm **Colin Low**, a freelance visual journalist based in Singapore. Currently, I am pursuing a Bachelor's degree in Public Policy and Global Affairs at Nanyang Technological University (NTU). 
 
-</details>
+Feel free to connect or check out my work on Instagram: **[@berlin_snaps](https://instagram.com/berlin_snaps)**.
+
+</font>
 
 ---
 
-## 🔤 Fonts & Typography
+### <font face="Newsreader, Georgia, serif" color="#1d1c1b">📁 What's Inside?</font>
 
-<details>
-<summary><b>Click to expand Font Assets</b></summary>
-<br>
+<font face="Newsreader, Georgia, serif" color="#1d1c1b">
 
-* **[Google Fonts](https://fonts.google.com/)** — Open-source fonts for web and print.
-* **[DaFont](https://www.dafont.com/)** — Archive of downloadable fonts (check individual license terms per font).
-* **[FontSquirrel](https://www.fontsquirrel.com/)** — Free fonts vetted for commercial use.
+Open a folder on the website and grab what you need:
 
-</details>
+* 🎨 **[Textures & Overlays](https://averagesgguy.github.io/Media-and-Design-Resources-Repository/#textures)** — Film grain, paper textures, light leaks, and rounded edge overlays.
+* 🎬 **[Text Animation & Transitions](https://averagesgguy.github.io/Media-and-Design-Resources-Repository/#transitions)** — Film burns, paint transitions, and notification overlays.
+* 🖼️️ **[Illustrations & Icons](https://averagesgguy.github.io/Media-and-Design-Resources-Repository/#illustrations)** — PNGs, 3D assets, vector icons, and vintage illustrations.
+* 📹 **[Video Clips & Memes](https://averagesgguy.github.io/Media-and-Design-Resources-Repository/#video)** — Stock footage, green screen clips, and movie line clips.
+* 🎵 **[Music & SFX](https://averagesgguy.github.io/Media-and-Design-Resources-Repository/#music)** — Sound effects, royalty-free background tracks, and meme sounds.
+* 🔤 **[Fonts](https://averagesgguy.github.io/Media-and-Design-Resources-Repository/#fonts)** — English and Chinese commercial-free typography resources.
+* 🛠️ **[Tools & Resources](https://averagesgguy.github.io/Media-and-Design-Resources-Repository/#tools)** — Image stabilization, Y2K collage tools, and visual inspiration galleries.
+
+</font>
+
+---
+
+### <font face="Newsreader, Georgia, serif" color="#1d1c1b">💬 Contributing & Feedback</font>
+
+<font face="Newsreader, Georgia, serif" color="#1d1c1b">
+
+I regularly update this repository with new resources as I discover them.
+
+* **Found a cool resource?** Reach out or DM me on Instagram **[@berlin_snaps](https://instagram.com/berlin_snaps)** so I can check it out!
+* **Found a broken link or license error?** If you spot any issues or notice that a site's licensing terms have changed, please send me a message or open an issue on GitHub.
+
+</font>
+
+---
+
+> [!WARNING]
+> **License Terms Change Over Time**
+> <br>
+> Always verify each site's specific license terms before using an asset in paid or commercial client work.
