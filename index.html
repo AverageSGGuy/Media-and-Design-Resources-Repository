@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Free assets for video editing and design</title>
-<meta name="description" content="A drawer of free textures, transitions, illustrations, video clips, music, fonts and tools for designers and video editors.">
+<title>Editing &amp; Design Resource Repository</title>
+<meta name="description" content="Most resources are royalty free and available for commercial use. Do double check the licensing as it may change over time!">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap" rel="stylesheet">
@@ -20,7 +20,6 @@
   --paper-soft:#4b4640;
   --font:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,"Songti SC","Noto Serif CJK SC","Noto Serif SC",serif;
   --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  --clip-img:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-2 -2 18 48'%3E%3Cpath d='M7 34V10a3.5 3.5 0 0 1 7 0V38a7 7 0 0 1-14 0V6a5 5 0 0 1 10 0V30' fill='none' stroke='%237d8592' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   color-scheme:light;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -48,6 +47,7 @@
 }
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-behavior:smooth}
+html.locked{overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition:none!important;animation:none!important}
@@ -64,6 +64,61 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 button{font-family:inherit}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Opening animation: the drawer front ---------- */
+.intro{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(40px,11vh,96px);
+  padding:24px;
+  background-color:var(--cab-front);
+  background-image:var(--grain);
+  box-shadow:0 -50px 90px rgba(0,0,0,.35);
+  transition:transform 1.3s cubic-bezier(.66,0,.2,1);
+  cursor:pointer;
+}
+.intro::before{
+  content:"";
+  position:absolute;
+  inset:clamp(14px,3vw,34px);
+  border-radius:22px;
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.14),inset 0 0 0 4px rgba(0,0,0,.1);
+  pointer-events:none;
+}
+.intro.open{transform:translateY(106%)}
+.intro-plate{
+  position:relative;
+  width:min(600px,86vw);
+  padding:30px 34px 32px;
+  background-color:#FDFCF9;
+  background-image:var(--grain);
+  color:#1f1c19;
+  text-align:center;
+  border-radius:4px;
+  box-shadow:0 0 0 9px rgba(0,0,0,.16),0 0 0 11px rgba(255,255,255,.14),0 18px 30px -12px rgba(0,0,0,.5);
+}
+.intro-plate p{
+  margin:0;
+  font-size:clamp(28px,5.6vw,50px);
+  font-weight:500;
+  line-height:1.05;
+  letter-spacing:-.02em;
+}
+.intro-handle{
+  width:180px;
+  height:28px;
+  border-radius:15px;
+  background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.08));
+  box-shadow:inset 0 2px 5px rgba(0,0,0,.4),0 1px 0 rgba(255,255,255,.28);
+  transition:transform .3s ease;
+}
+.intro.pull .intro-handle{transform:translateY(14px)}
 
 /* ---------- Hero ---------- */
 .hero{
@@ -71,43 +126,31 @@ button{font-family:inherit}
   margin:0 auto;
   padding:clamp(40px,8vw,96px) clamp(18px,4vw,40px) 12px;
   display:grid;
-  grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);
+  grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);
   gap:36px 48px;
   align-items:end;
 }
 .hero h1{
   margin:0;
   font-weight:400;
-  font-size:clamp(3rem,9.5vw,7.2rem);
-  line-height:.95;
+  font-size:clamp(2.9rem,8.6vw,6.6rem);
+  line-height:.96;
   letter-spacing:-.03em;
 }
 .hero-note{
-  position:relative;
   justify-self:end;
-  width:min(100%,340px);
-  padding:36px 26px 26px;
+  width:min(100%,360px);
+  padding:28px 26px;
   background-color:#FDFCF9;
   background-image:var(--grain);
   color:#1f1c19;
-  font-size:clamp(21px,2.6vw,25px);
+  font-size:clamp(20px,2.4vw,23px);
   font-style:italic;
-  line-height:1.25;
-  transform:rotate(1.8deg);
+  line-height:1.3;
+  transform:rotate(1.6deg);
   box-shadow:0 1px 1px rgba(0,0,0,.25),0 18px 30px -12px rgba(0,0,0,.45);
 }
 .hero-note p{margin:0}
-.clip{
-  position:absolute;
-  top:-16px;
-  left:20px;
-  width:17px;
-  height:46px;
-  background:var(--clip-img) center/contain no-repeat;
-  transform:rotate(4deg);
-  pointer-events:none;
-  z-index:3;
-}
 .search{grid-column:1/-1}
 .search input{
   display:block;
@@ -123,7 +166,6 @@ button{font-family:inherit}
 .search input::placeholder{color:#6b665f;font-weight:400;font-style:italic}
 .search input:focus-visible{outline:3px solid #3350D8;outline-offset:3px}
 .status{margin:12px 0 0;color:var(--ink-soft);font-size:16px;min-height:1.5em}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* ---------- Bar shown while a folder is open ---------- */
 .openbar{
@@ -170,12 +212,39 @@ button{font-family:inherit}
   cursor:pointer;
 }
 .ob-close:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.ob-actions{display:flex;align-items:center;gap:6px;flex:none}
+.ob-fav{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  min-height:44px;
+  padding:0 14px;
+  border:0;
+  border-radius:99px;
+  background:#C8452F;
+  color:#fff;
+  font-size:17px;
+  font-weight:500;
+  cursor:pointer;
+}
+.ob-fav svg{width:20px;height:20px;fill:currentColor}
+.ob-fav:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.ob-close .long{display:none}
+@media (min-width:520px){.ob-close .long{display:inline}}
+.ghost{
+  position:fixed;
+  margin:0;
+  z-index:300;
+  pointer-events:none;
+  will-change:transform,opacity;
+  filter:drop-shadow(0 16px 20px rgba(0,0,0,.4));
+}
 
 /* ---------- The drawer ---------- */
 .cab-wrap{
   max-width:1180px;
   margin:0 auto;
-  padding:78px clamp(18px,4vw,40px) 70px;
+  padding:78px clamp(18px,4vw,40px) 90px;
 }
 .cabinet{
   padding:30px clamp(12px,2.5vw,28px) 26px;
@@ -200,6 +269,12 @@ button{font-family:inherit}
   border-radius:12px;
   background:linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,.08));
   box-shadow:inset 0 2px 4px rgba(0,0,0,.35),0 1px 0 rgba(255,255,255,.25);
+}
+/* Folders rise out of the drawer once it opens */
+.cabinet.pre .folder{opacity:0;transform:translateY(90px)}
+.cabinet.entering .folder{
+  transition:opacity .6s ease,transform .95s cubic-bezier(.2,.8,.2,1);
+  transition-delay:calc(var(--i) * 75ms + 450ms);
 }
 
 /* ---------- Folders ---------- */
@@ -307,43 +382,39 @@ button{font-family:inherit}
 }
 .folder.instant .panel,.folder.instant .folder-body::after{transition:none!important}
 .panel-clip{min-height:0;overflow:clip}
-.panel-in{padding:40px clamp(14px,3vw,36px) 100px}
+.panel-in{padding:38px clamp(12px,2vw,22px) 100px}
 .folder-note{
-  max-width:640px;
-  margin:0 auto 30px;
+  margin:0 0 26px 6px;
   color:var(--fi);
   font-size:19px;
   font-style:italic;
 }
 
-/* ---------- Stacked papers ---------- */
+/* ---------- Papers, full width of the folder ---------- */
 .stack{
   list-style:none;
-  max-width:640px;
-  margin:0 auto;
+  margin:0;
   padding:0 0 24px;
 }
 .slot{
   position:relative;
   margin-bottom:-24px;
-  transform:translateX(var(--x)) rotate(var(--r));
   transition:transform .18s ease;
   filter:drop-shadow(0 -3px 4px rgba(0,0,0,.2)) drop-shadow(0 6px 8px rgba(0,0,0,.16));
 }
-.slot:hover,.slot:focus-within{
-  z-index:2;
-  transform:translateX(var(--x)) translateY(-6px) rotate(0deg);
-}
+.slot:hover,.slot:focus-within{z-index:2;transform:translateY(-5px)}
 .paper{
   position:relative;
-  display:block;
-  padding:22px 26px 46px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) auto 44px;
+  column-gap:24px;
+  align-items:baseline;
+  padding:22px 12px 46px 28px;
   border-radius:3px;
   background-color:var(--pc);
   background-image:var(--grain),var(--pattern,none);
   background-size:160px 160px;
   color:var(--paper-ink);
-  text-decoration:none;
 }
 .v-sheet{--pc:#FDFCF9}
 .v-graph{
@@ -356,21 +427,38 @@ button{font-family:inherit}
   --pattern:repeating-linear-gradient(transparent 0 27px,rgba(70,110,190,.18) 27px 28px);
 }
 .v-note{--pc:#F6D5DA}
-.p-head{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:baseline;
-  justify-content:space-between;
-  gap:2px 18px;
+.v-graph::before,.v-note::before{
+  content:"";
+  position:absolute;
+  top:-11px;
+  left:50%;
+  width:78px;
+  height:24px;
+  margin-left:-39px;
+  background:rgba(240,226,160,.75);
+  transform:rotate(-3deg);
+  box-shadow:0 1px 2px rgba(0,0,0,.15);
+  pointer-events:none;
 }
 .p-title{
+  grid-column:1;
   margin:0;
   font-size:26px;
   font-weight:500;
   line-height:1.15;
   letter-spacing:-.01em;
 }
+.p-link{color:inherit;text-decoration:none}
+.p-link::after{content:"";position:absolute;inset:0;z-index:1}
+.p-desc{
+  grid-column:2;
+  margin:0;
+  color:var(--paper-soft);
+  font-size:18px;
+  line-height:1.35;
+}
 .p-url{
+  grid-column:3;
   color:var(--paper-soft);
   font-size:16px;
   font-style:italic;
@@ -380,33 +468,59 @@ button{font-family:inherit}
   overflow-wrap:anywhere;
 }
 .slot:hover .p-url{text-decoration-thickness:2px}
-.p-desc{margin:6px 0 0;color:var(--paper-soft);font-size:18px;line-height:1.35}
-.paper:focus-visible{outline:3px solid #111;outline-offset:3px}
+.fav{
+  grid-column:4;
+  align-self:start;
+  position:relative;
+  z-index:2;
+  display:grid;
+  place-items:center;
+  width:44px;
+  height:44px;
+  margin-top:-10px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:none;
+  color:var(--paper-ink);
+  cursor:pointer;
+  transition:transform .15s;
+}
+.fav svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round}
+.fav:hover{transform:scale(1.12)}
+.fav[aria-pressed="true"]{color:#C8452F}
+.fav[aria-pressed="true"] svg{fill:currentColor}
+.fav:focus-visible{outline:3px solid #111;outline-offset:0}
+.p-link:focus-visible{outline:3px solid #111;outline-offset:3px}
 @supports selector(:has(*)){
-  .paper:focus-visible{outline:none}
-  .slot:has(.paper:focus-visible){
+  .p-link:focus-visible{outline:none}
+  .slot:has(.p-link:focus-visible){
     outline:3px solid #111;
     outline-offset:4px;
     box-shadow:0 0 0 4px #fff;
   }
 }
-
-/* ---------- Footer ---------- */
-.foot{
-  max-width:1180px;
-  margin:0 auto;
-  padding:0 clamp(18px,4vw,40px) 80px;
-  color:var(--ink-soft);
-  font-size:16px;
+.fav-empty{
+  margin:0;
+  padding:4px 0 24px 6px;
+  color:var(--fi);
+  font-size:19px;
+  font-style:italic;
 }
-.foot p{margin:0;max-width:60ch}
 noscript p{max-width:1180px;margin:0 auto;padding:20px clamp(18px,4vw,40px)}
 
 @media (max-width:760px){
   .hero{grid-template-columns:1fr}
   .hero-note{justify-self:start}
-  .paper{padding:20px 20px 44px}
-  .p-title{font-size:24px}
+  .paper{
+    grid-template-columns:minmax(0,1fr) 44px;
+    row-gap:2px;
+    padding:18px 8px 44px 20px;
+  }
+  .p-title{grid-column:1;grid-row:1;font-size:24px}
+  .fav{grid-column:2;grid-row:1;margin-top:-8px}
+  .p-desc{grid-column:1/-1;grid-row:2}
+  .p-url{grid-column:1/-1;grid-row:3;justify-self:start;margin-top:2px}
   .cabinet-front{height:60px}
 }
 </style>
@@ -414,22 +528,24 @@ noscript p{max-width:1180px;margin:0 auto;padding:20px clamp(18px,4vw,40px)}
 <body>
 
 <header class="hero">
-  <h1>Free assets for video editing and design</h1>
+  <h1>Editing &amp; Design Resource Repository</h1>
   <aside class="hero-note" aria-label="About this page">
-    <span class="clip" aria-hidden="true"></span>
-    <p>Free links for designers and video editors. Open a folder and take what you need.</p>
+    <p>Most resources are royalty free and available for commercial use. Do double check the licensing as it may change over time!</p>
   </aside>
   <div class="search">
     <label class="sr" for="q">Search links</label>
     <input id="q" type="search" placeholder="Search links, like “grain” or “font”" autocomplete="off">
-    <p class="status" id="status" aria-live="polite"></p>
+    <p class="status" id="status"></p>
   </div>
 </header>
 
 <div class="openbar" id="openbar">
   <div class="openbar-inner" id="openbar-inner" hidden>
     <span class="ob-tab" id="ob-tab"></span>
-    <button type="button" class="ob-close" id="ob-close">Close folder</button>
+    <div class="ob-actions">
+      <button type="button" class="ob-fav" id="ob-fav" aria-label="Favourites, 0 saved"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg><span id="ob-fav-n" aria-hidden="true">0</span></button>
+      <button type="button" class="ob-close" id="ob-close">Close<span class="long"> folder</span></button>
+    </div>
   </div>
 </div>
 
@@ -440,105 +556,110 @@ noscript p{max-width:1180px;margin:0 auto;padding:20px clamp(18px,4vw,40px)}
   <div class="cabinet-front" aria-hidden="true"><span class="handle"></span></div>
 </main>
 
-<footer class="foot">
-  <p>Licenses change. Check each site's terms before you use a file in client or paid work.</p>
-</footer>
+<div class="sr" id="live" aria-live="polite"></div>
 
 <script>
 /* To add a link, add a line to the folder it belongs in.
    t = title, u = URL, d = description (optional). */
 const FOLDERS = [
-  { id:"textures", name:"Textures and overlays", color:"#EC7B66", ink:"#241612", pos:0.05, links:[
-    { t:"Texture Labs", u:"https://texturelabs.org/", d:"Free textures (no motion)" },
-    { t:"iNeedFX", u:"https://ineedfx.com/", d:"Free light leaks and film grain overlays" },
+  { id:"favourites", name:"Favourites", color:"#C8452F", ink:"#ffffff", pos:0.04, fav:true, links:[] },
+  { id:"textures", name:"Textures & Overlays", color:"#9BBAE4", ink:"#12202f", pos:0.5, links:[
+    { t:"Texture Labs", u:"https://texturelabs.org/", d:"Textures (static)" },
+    { t:"iNeedFX", u:"https://ineedfx.com/", d:"Light leaks and film grain overlays" },
     { t:"Morra", u:"https://morra.gumroad.com/l/roundedcorners", d:"Round edges overlay" },
     { t:"PremiumBeat", u:"https://www.premiumbeat.com/blog/free-animated-textures/", d:"Animated textures" },
-    { t:"Design Syndrome", u:"https://designsyndrome.gumroad.com/", d:"HYPE paper and plastic texture" },
-    { t:"Resource Boy", u:"https://resourceboy.com/textures/", d:"Free textures (no motion)" },
-    { t:"Film grain pack (8K)", u:"https://www.dropbox.com/s/luw0b3kggmq0gpw/Film-Grain-Textures-FREE-Pack-8K.zip?dl=0", d:"Free grain (no motion)" }
+    { t:"Design Syndrome", u:"https://designsyndrome.gumroad.com/", d:"Paper and plastic texture" },
+    { t:"Resource Boy", u:"https://resourceboy.com/textures/", d:"Textures (static)" },
+    { t:"Film grain pack (8K)", u:"https://www.dropbox.com/s/luw0b3kggmq0gpw/Film-Grain-Textures-FREE-Pack-8K.zip?dl=0", d:"Grain (static)" }
   ]},
-  { id:"transitions", name:"Text animation and transitions", color:"#DDB35A", ink:"#241d0c", pos:0.55, links:[
+  { id:"transitions", name:"Text Animation & Transitions", color:"#DDB35A", ink:"#241d0c", pos:0.2, links:[
     { t:"Creative Flow Market", u:"https://creativeflowmarket.com/", d:"Paint transitions" },
     { t:"Think Make Push", u:"https://thinkmakepush.com/p/28-film-burn-transitions/", d:"Film burn transitions" },
     { t:"Cinepacks", u:"https://cinepacks.store/collections/packs", d:"Free transitions" },
     { t:"Jitter", u:"https://jitter.video/templates/", d:"Text notification animation" },
     { t:"PremiumBeat", u:"https://www.premiumbeat.com/blog/free-hand-drawn-animated-shapes/", d:"Hand-drawn symbols and shapes" },
-    { t:"Mister Horse", u:"https://misterhorse.com/product-manager", d:"Free text transition plugin" },
+    { t:"Mister Horse", u:"https://misterhorse.com/product-manager", d:"Text transition plugin" },
     { t:"Typeface Animator", u:"https://www.typefaceanimator.com/", d:"Text animation" }
   ]},
-  { id:"illustrations", name:"Illustrations and icons", color:"#9BBAE4", ink:"#12202f", pos:0.22, links:[
+  { id:"illustrations", name:"Illustrations & Icons", color:"#E7A6B4", ink:"#2b141a", pos:0.85, links:[
     { t:"Irasutoya", u:"https://www.irasutoya.com/", d:"Japanese cartoon drawings" },
     { t:"Flaticon", u:"https://www.flaticon.com/", d:"Vector icons" },
     { t:"CleanPNG", u:"https://www.cleanpng.com/", d:"PNG images" },
     { t:"Tyoudoii Illust", u:"https://tyoudoii-illust.com/", d:"Drawings and icons" },
     { t:"Vector Shelf", u:"https://vectorshelf.com/", d:"Drawings and icons" },
     { t:"Loose Drawing", u:"https://loosedrawing.com/", d:"Drawings and icons" },
-    { t:"Open Peeps", u:"https://www.openpeeps.com/", d:"Drawings, free human cartoons" },
+    { t:"Open Peeps", u:"https://www.openpeeps.com/", d:"Drawings of people" },
     { t:"Noto Emoji Animation", u:"https://googlefonts.github.io/noto-emoji-animation/", d:"Emoji animation" },
     { t:"SVG Icon", u:"https://svgicon.net/", d:"Doodles" },
     { t:"Heritage Type", u:"https://www.heritagetype.com/pages/free-vintage-illustrations", d:"Free vintage illustrations" },
     { t:"Illust Center", u:"https://illustcenter.com/", d:"Free illustrations" },
     { t:"Humaaans", u:"https://www.humaaans.com/", d:"Free human cartoons" },
+    { t:"Open Peeps", u:"https://openpeeps.com/", d:"Free human cartoons" },
     { t:"Thiings", u:"https://www.thiings.co/things", d:"3D icons" }
   ]},
-  { id:"video", name:"Video clips", color:"#E7A6B4", ink:"#2b141a", pos:0.9, links:[
+  { id:"video", name:"Video Clips", color:"#94BFA9", ink:"#12251c", pos:0.35, links:[
     { t:"PlayPhrase.me", u:"https://www.playphrase.me/", d:"Exact lines from movies (5 for free)" },
     { t:"Mixkit", u:"https://mixkit.co/free-stock-video/", d:"Stock videos" },
     { t:"Life of Vids", u:"https://lifeofvids.com/#/", d:"Stock videos" },
     { t:"I Green Screen Things", u:"https://www.tiktok.com/@igreenscreenthings?lang=en", d:"Free meme clips" },
     { t:"Videezy", u:"https://www.videezy.com/", d:"Stock footage" },
-    { t:"Yarn", u:"https://getyarn.io/", d:"Exact phrase from drama / movie" },
+    { t:"PlayPhrase.me search", u:"https://www.playphrase.me/#/search", d:"Exact phrase from movie clips" },
+    { t:"Yarn", u:"https://getyarn.io/", d:"Exact phrase from dramas / movies" },
     { t:"Green Screen Memes", u:"https://greenscreenmemes.com/", d:"Green screen memes" },
     { t:"My Meme Videos", u:"https://mymemevideos.com/video-library/", d:"Original meme download" },
-    { t:"Transitional Hooks", u:"https://transitionalhooks.com/", d:"The funny video at the front before guy gets hit" },
+    { t:"Transitional Hooks", u:"https://transitionalhooks.com/", d:"The ‘funny video at the front before guy gets hit’" },
     { t:"Destockd", u:"https://destockd.com/#/", d:"Public domain videos by the US government" }
   ]},
-  { id:"music", name:"Music and SFX", note:"[double check licensing]", color:"#3350D8", ink:"#ffffff", pos:0.4, links:[
-    { t:"Mixkit", u:"https://mixkit.co/free-stock-music/", d:"Free music" },
+  { id:"music", name:"Music & SFX", note:"*Note: Please double check the licensing before use", color:"#3350D8", ink:"#ffffff", pos:1, links:[
     { t:"Zapsplat", u:"https://www.zapsplat.com/sound-effect-categories/", d:"Sound effects" },
     { t:"MyInstants", u:"https://www.myinstants.com/en/index/us/", d:"TikTok sound effects" },
     { t:"Freesound", u:"https://freesound.org/", d:"Sound effects" },
-    { t:"ToSound", u:"https://www.tosound.com/", d:"Free Chinese sound effects, free music" },
+    { t:"ToSound search", u:"https://www.tosound.com/search", d:"Free Chinese sound effects" },
+    { t:"Mixkit", u:"https://mixkit.co/free-stock-music/", d:"Free music" },
+    { t:"ToSound", u:"https://www.tosound.com/", d:"Free music" },
     { t:"Chosic", u:"https://www.chosic.com/free-music/all/?sort=&attribution=no&duration=", d:"Free music" },
     { t:"Aigei", u:"https://www.aigei.com/music/song/cc0_commercial_unlim_6", d:"Free music" },
     { t:"Soundscrate", u:"https://soundscrate.com/royalty-free-music-categories.html", d:"Free music" },
     { t:"Meme Sound Effects", u:"https://memesoundeffects.com/sound-library/", d:"Free sound effects" },
     { t:"Uppbeat", u:"https://uppbeat.io", d:"Free music" },
-    { t:"NCS", u:"https://ncs.io/", d:"Free music but need credit" }
+    { t:"NCS", u:"https://ncs.io/", d:"Free music but need to credit" }
   ]},
-  { id:"fonts", name:"Fonts", note:"【华⽂字体请留意如果字体商⽤免费】", noteLang:"zh", color:"#94BFA9", ink:"#12251c", pos:1, links:[
+  { id:"fonts", name:"Fonts", note:"*注：华文字体请留意如果可以免费商用", noteLang:"zh", color:"#EC7B66", ink:"#241612", pos:0.12, links:[
     { t:"Free Faces Gallery", u:"https://www.freefaces.gallery/" },
     { t:"Collletttivo", u:"https://www.collletttivo.it/typefaces", d:"English fonts" },
+    { t:"Maoken", u:"https://www.maoken.com/", d:"Chinese and English" },
     { t:"UIIIUIII", u:"https://uiiiuiii.com/tool/typeface", d:"Chinese fonts" },
     { t:"Ziyouziti", u:"https://ziyouziti.com/index-index-all.html", d:"Chinese fonts" },
-    { t:"Maoken", u:"https://www.maoken.com/", d:"Free Chinese and English" },
-    { t:"Fonts.net.cn", u:"https://www.fonts.net.cn/commercial-free/fonts-zh-1.html", d:"Free Chinese" },
-    { t:"100font", u:"https://www.100font.com/", d:"Free Chinese" }
+    { t:"Fonts.net.cn", u:"https://www.fonts.net.cn/commercial-free/fonts-zh-1.html", d:"Chinese fonts" },
+    { t:"100font", u:"https://www.100font.com/", d:"Chinese fonts" }
   ]},
-  { id:"tools", name:"Tools", color:"#B9A6E0", ink:"#1e1533", pos:0.1, links:[
+  { id:"tools", name:"Tools", color:"#B9A6E0", ink:"#1e1533", pos:0.62, links:[
     { t:"Gyroflow", u:"https://gyroflow.xyz/", d:"Image stabilisation" },
-    { t:"Landing Space", u:"https://landing.space/", d:"Y2K collage maker" }
+    { t:"Landing Space", u:"https://landing.space/", d:"Y2K collage maker" },
+    { t:"YT Ultra", u:"https://www.ytultra.com/en/youtube-video-downloader/", d:"YouTube video downloader" }
   ]},
-  { id:"resources", name:"Resources", color:"#58A0A6", ink:"#08202a", pos:0.7, links:[
+  { id:"resources", name:"Resources", color:"#58A0A6", ink:"#08202a", pos:0.3, links:[
     { t:"Frameset", u:"https://frameset.app/stills", d:"Frames and shot size inspo" },
     { t:"Eyecannndy", u:"https://www.eyecannndy.com/", d:"Filming and editing inspo" },
     { t:"Jon Loomer", u:"https://www.jonloomer.com/tiktok-instagram-reels-safe-zones-templates/", d:"TikTok safe zone marker" },
     { t:"Typographic Posters", u:"https://www.typographicposters.com/", d:"Free poster inspo" },
-    { t:"YT Ultra", u:"https://www.ytultra.com/en/youtube-video-downloader/", d:"YouTube video downloader" }
+    { t:"Cosmos", u:"https://www.cosmos.so/", d:"Pinterest" },
+    { t:"Deck Gallery", u:"https://www.deck.gallery/", d:"Pitchdeck inspo" }
   ]}
 ];
 
-const ROT = [-1.1, 0.8, -0.5, 1.2, -0.9, 0.6, -1.3, 0.9];
-const OFF = [-6, 5, -2, 7, -5, 3, -7, 2];
-const LOOKS = ["sheet", "graph", "sheet", "lined", "note", "sheet", "graph", "lined"];
+const LOOKS = ["sheet", "graph", "sheet", "lined", "note", "sheet", "lined", "graph"];
+const FAV_KEY = "editing-design-repository:favourites";
 
 const drawer = document.getElementById("drawer");
 const input = document.getElementById("q");
 const status = document.getElementById("status");
-const bar = document.getElementById("openbar");
+const live = document.getElementById("live");
 const barInner = document.getElementById("openbar-inner");
 const barTab = document.getElementById("ob-tab");
 const barClose = document.getElementById("ob-close");
+const barFav = document.getElementById("ob-fav");
+const barFavN = document.getElementById("ob-fav-n");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function el(tag, cls, text){
@@ -549,6 +670,88 @@ function el(tag, cls, text){
 }
 function domain(u){ return new URL(u).hostname.replace(/^www\./, ""); }
 
+/* ---------- Favourites (saved in the visitor's own browser) ---------- */
+const byUrl = new Map();
+FOLDERS.forEach(f => f.links.forEach(l => { if (!byUrl.has(l.u)) byUrl.set(l.u, l); }));
+
+function loadFavs(){
+  try {
+    const v = JSON.parse(localStorage.getItem(FAV_KEY) || "[]");
+    return Array.isArray(v) ? v.filter(u => byUrl.has(u)) : [];
+  } catch (e) { return []; }
+}
+function saveFavs(){
+  try { localStorage.setItem(FAV_KEY, JSON.stringify(favs)); } catch (e) {}
+}
+let favs = loadFavs();
+
+const HEART = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>';
+
+function makePaper(l, k){
+  const item = el("li", "slot");
+  const paper = el("div", "paper v-" + LOOKS[k % LOOKS.length]);
+
+  const h = el("h3", "p-title");
+  const a = el("a", "p-link", l.t);
+  a.href = l.u;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  a.append(el("span", "sr", " (opens in a new tab)"));
+  h.append(a);
+  paper.append(h);
+
+  if (l.d) paper.append(el("p", "p-desc", l.d));
+  paper.append(el("span", "p-url", domain(l.u)));
+
+  const b = el("button", "fav");
+  b.type = "button";
+  b.dataset.url = l.u;
+  b.setAttribute("aria-label", "Save " + l.t + " to favourites");
+  b.setAttribute("aria-pressed", String(favs.includes(l.u)));
+  b.innerHTML = HEART;
+  b.addEventListener("click", () => {
+    const adding = !favs.includes(l.u);
+    if (adding){
+      const flying = !reduceMotion;
+      if (flying) flyToFavs(b.closest(".paper"));
+      toggleFav(l, flying);
+      popHeart(b);
+    } else if (b.closest("#favourites") && !reduceMotion){
+      const slot = b.closest(".slot");
+      slot.animate(
+        [{ opacity: 1, transform: "none" }, { opacity: 0, transform: "translateY(-14px) scale(.98)" }],
+        { duration: 220, easing: "ease-in", fill: "forwards" }
+      ).finished.then(() => toggleFav(l, false), () => toggleFav(l, false));
+    } else {
+      toggleFav(l, false);
+    }
+  });
+  paper.append(b);
+
+  item.append(paper);
+  return item;
+}
+
+function toggleFav(l, flying){
+  const i = favs.indexOf(l.u);
+  if (i > -1){
+    favs.splice(i, 1);
+    live.textContent = "Removed " + l.t + " from Favourites";
+  } else {
+    favs.unshift(l.u);
+    live.textContent = "Saved " + l.t + " to Favourites";
+  }
+  saveFavs();
+  syncHearts();
+  renderFavs(flying);
+}
+function syncHearts(){
+  document.querySelectorAll(".fav").forEach(b => {
+    b.setAttribute("aria-pressed", String(favs.includes(b.dataset.url)));
+  });
+}
+
+/* ---------- Build the folders ---------- */
 const records = [];
 const refs = [];
 let total = 0;
@@ -558,7 +761,7 @@ FOLDERS.forEach((f, fi) => {
   const sec = el("section", "folder");
   sec.id = f.id;
   sec.setAttribute("aria-labelledby", f.id + "-h");
-  sec.style.cssText = "--f:" + f.color + ";--fi:" + f.ink + ";--pos:" + f.pos + ";z-index:" + (fi + 1);
+  sec.style.cssText = "--f:" + f.color + ";--fi:" + f.ink + ";--pos:" + f.pos + ";--i:" + fi + ";z-index:" + (fi + 1);
 
   const body = el("div", "folder-body");
 
@@ -568,7 +771,7 @@ FOLDERS.forEach((f, fi) => {
   btn.type = "button";
   btn.setAttribute("aria-expanded", "false");
   btn.setAttribute("aria-controls", f.id + "-panel");
-  const count = el("span", "count", String(f.links.length));
+  const count = el("span", "count", String(f.fav ? favs.length : f.links.length));
   const caret = el("span", "caret");
   caret.setAttribute("aria-hidden", "true");
   btn.append(el("span", "name", f.name), count, caret);
@@ -588,33 +791,16 @@ FOLDERS.forEach((f, fi) => {
   }
 
   const ul = el("ul", "stack");
-  f.links.forEach((l, li) => {
-    const item = el("li", "slot");
-    item.style.setProperty("--r", ROT[(li * 5 + fi * 2) % ROT.length] + "deg");
-    item.style.setProperty("--x", OFF[(li * 3 + fi) % OFF.length] + "px");
-
-    const a = el("a", "paper v-" + LOOKS[(li + fi * 3) % LOOKS.length]);
-    a.href = l.u;
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
-    a.setAttribute("aria-label", l.t + (l.d ? ". " + l.d : "") + ". Opens in a new tab.");
-
-    if (li === 0){
-      const c = el("span", "clip");
-      c.setAttribute("aria-hidden", "true");
-      a.append(c);
-    }
-
-    const head = el("div", "p-head");
-    head.append(el("h3", "p-title", l.t), el("span", "p-url", domain(l.u)));
-    a.append(head);
-    if (l.d) a.append(el("p", "p-desc", l.d));
-
-    item.append(a);
-    ul.append(item);
-    total++;
-    records.push({ item, ref: fi, hay: (l.t + " " + (l.d || "") + " " + domain(l.u) + " " + f.name).toLowerCase() });
-  });
+  if (!f.fav){
+    f.links.forEach((l, li) => {
+      const item = makePaper(l, li + fi * 3);
+      ul.append(item);
+      total++;
+      records.push({ item, ref: fi, hay: (l.t + " " + (l.d || "") + " " + domain(l.u) + " " + f.name).toLowerCase() });
+    });
+  }
+  const empty = el("p", "fav-empty", "Nothing saved yet. Tap the heart on a paper to keep it here.");
+  if (f.fav) inner.append(empty);
   inner.append(ul);
   clip.append(inner);
   panel.append(clip);
@@ -622,8 +808,9 @@ FOLDERS.forEach((f, fi) => {
   sec.append(body);
   drawer.append(sec);
 
-  const r = { sec, body, btn, panel, count, name: f.name, color: f.color, ink: f.ink,
-              total: f.links.length, shown: f.links.length, open: false, forcedClosed: false };
+  const r = { sec, btn, panel, count, ul, empty, name: f.name, color: f.color, ink: f.ink, isFav: !!f.fav,
+              total: f.fav ? favs.length : f.links.length, shown: f.fav ? favs.length : f.links.length,
+              open: false, forcedClosed: false };
   refs.push(r);
 
   btn.addEventListener("click", () => toggle(fi));
@@ -632,6 +819,82 @@ FOLDERS.forEach((f, fi) => {
   });
 });
 
+const favRef = refs[0];
+function updateFavCount(bump){
+  favRef.total = favRef.shown = favs.length;
+  favRef.count.textContent = String(favs.length);
+  barFavN.textContent = String(favs.length);
+  barFav.setAttribute("aria-label", "Favourites, " + favs.length + " saved");
+  if (bump && !reduceMotion){
+    [favRef.count, barFav].forEach(n => n.animate(
+      [{ transform: "scale(1)" }, { transform: "scale(1.35)" }, { transform: "scale(1)" }],
+      { duration: 340, easing: "ease-out" }
+    ));
+  }
+}
+function renderFavs(deferCount){
+  favRef.ul.textContent = "";
+  favs.forEach((u, k) => favRef.ul.append(makePaper(byUrl.get(u), k)));
+  favRef.empty.hidden = favs.length > 0;
+  if (!deferCount) updateFavCount(false);
+}
+renderFavs();
+
+function popHeart(b){
+  if (reduceMotion) return;
+  const svg = b.querySelector("svg");
+  if (svg) svg.animate(
+    [{ transform: "scale(1)" }, { transform: "scale(1.55)" }, { transform: "scale(1)" }],
+    { duration: 320, easing: "ease-out" }
+  );
+}
+
+/* Lift the paper, then carry it to the Favourites tab (or the bar button if the tab is out of view) */
+function flyToFavs(paperEl){
+  const from = paperEl.getBoundingClientRect();
+  const tab = favRef.sec.querySelector(".tab").getBoundingClientRect();
+  const barOn = !barInner.hidden && !barFav.hidden;
+  const barBottom = barInner.hidden ? 0 : barInner.getBoundingClientRect().bottom;
+  let tx, ty;
+  if (!favRef.sec.hidden && tab.width > 0 && tab.top > barBottom + 4 && tab.bottom < window.innerHeight){
+    tx = tab.left + tab.width / 2;
+    ty = tab.top + tab.height / 2;
+  } else if (barOn){
+    const r = barFav.getBoundingClientRect();
+    tx = r.left + r.width / 2;
+    ty = r.top + r.height / 2;
+  } else {
+    tx = window.innerWidth / 2;
+    ty = 4;
+  }
+
+  const g = paperEl.cloneNode(true);
+  g.classList.add("ghost");
+  g.setAttribute("aria-hidden", "true");
+  g.inert = true;
+  g.querySelectorAll("a,button").forEach(n => { n.tabIndex = -1; });
+  const gb = g.querySelector(".fav");
+  if (gb) gb.setAttribute("aria-pressed", "true");
+  g.style.left = from.left + "px";
+  g.style.top = from.top + "px";
+  g.style.width = from.width + "px";
+  g.style.height = from.height + "px";
+  document.body.append(g);
+
+  const dx = tx - (from.left + from.width / 2);
+  const dy = ty - (from.top + from.height / 2);
+  const anim = g.animate([
+    { transform: "translate(0,0) scale(1) rotate(0deg)", opacity: 1, offset: 0, easing: "ease-out" },
+    { transform: "translate(0,-26px) scale(1.04) rotate(-1.2deg)", opacity: 1, offset: 0.22, easing: "cubic-bezier(.5,0,.3,1)" },
+    { transform: "translate(" + dx * 0.55 + "px," + (dy * 0.45 - 60) + "px) scale(.35) rotate(-5deg)", opacity: 1, offset: 0.68, easing: "ease-in" },
+    { transform: "translate(" + dx + "px," + dy + "px) scale(.06) rotate(-9deg)", opacity: 0.15, offset: 1 }
+  ], { duration: 950, fill: "forwards" });
+
+  const done = ok => { g.remove(); updateFavCount(ok); };
+  anim.finished.then(() => done(true), () => done(false));
+}
+
+/* ---------- Open / close folders ---------- */
 function searching(){ return input.value.trim() !== ""; }
 
 function setOpen(r, isOpen){
@@ -651,6 +914,11 @@ function setOpen(r, isOpen){
 function refresh(){
   const s = searching();
   refs.forEach((r, i) => {
+    if (r.isFav){
+      r.sec.hidden = s;
+      setOpen(r, !s && i === openIdx);
+      return;
+    }
     const shouldOpen = s ? (r.shown > 0 && !r.forcedClosed) : i === openIdx;
     setOpen(r, shouldOpen);
     r.sec.hidden = s && r.shown === 0;
@@ -662,6 +930,7 @@ function refresh(){
     barTab.textContent = r.name;
     barTab.style.setProperty("--f", r.color);
     barTab.style.setProperty("--fi", r.ink);
+    barFav.hidden = r.isFav;
   } else {
     barInner.hidden = true;
   }
@@ -688,16 +957,20 @@ function toggle(i){
 }
 
 barClose.addEventListener("click", () => { if (openIdx > -1) toggle(openIdx); });
+barFav.addEventListener("click", () => { if (!favRef.open) toggle(0); });
 document.addEventListener("keydown", e => {
   if (e.key === "Escape" && openIdx > -1 && !searching() && document.activeElement !== input) toggle(openIdx);
 });
 
-/* Search */
+/* ---------- Search ---------- */
+const folderCount = FOLDERS.filter(f => !f.fav).length;
+function summary(){ return total + " links in " + folderCount + " folders"; }
+
 input.addEventListener("input", () => {
   refs.forEach(r => r.forcedClosed = false);
   const raw = input.value.trim();
   const terms = raw.toLowerCase().split(/\s+/).filter(Boolean);
-  refs.forEach(r => r.shown = 0);
+  refs.forEach(r => { if (!r.isFav) r.shown = 0; });
   let shown = 0;
   records.forEach(rec => {
     const ok = terms.every(t => rec.hay.includes(t));
@@ -705,17 +978,57 @@ input.addEventListener("input", () => {
     if (ok){ shown++; refs[rec.ref].shown++; }
   });
   if (!terms.length){
-    refs.forEach(r => r.shown = r.total);
-    status.textContent = total + " links in " + FOLDERS.length + " folders";
+    refs.forEach(r => { if (!r.isFav) r.shown = r.total; });
+    status.textContent = summary();
   } else if (shown){
     status.textContent = "Showing " + shown + " of " + total + " links";
   } else {
     status.textContent = "No links match “" + raw + "”. Try a shorter word, like “font” or “grain”.";
   }
+  status.setAttribute("aria-live", "polite");
   refresh();
 });
-status.textContent = total + " links in " + FOLDERS.length + " folders";
+status.textContent = summary();
 refresh();
+
+/* ---------- Opening animation ---------- */
+function playIntro(){
+  if (reduceMotion) return;
+  const cabinet = drawer;
+  const root = document.documentElement;
+
+  const intro = el("div", "intro");
+  intro.setAttribute("aria-hidden", "true");
+  const plate = el("div", "intro-plate");
+  plate.append(el("p", null, "Editing & Design Resource Repository"));
+  intro.append(plate, el("div", "intro-handle"));
+
+  root.classList.add("locked");
+  cabinet.classList.add("pre");
+  document.body.append(intro);
+
+  let started = false;
+  function start(){
+    if (started) return;
+    started = true;
+    intro.classList.add("pull");
+    setTimeout(() => {
+      intro.classList.add("open");
+      cabinet.classList.add("entering");
+      cabinet.classList.remove("pre");
+    }, 320);
+    setTimeout(() => {
+      intro.remove();
+      root.classList.remove("locked");
+      window.scrollTo(0, 0);
+    }, 1800);
+    setTimeout(() => cabinet.classList.remove("entering"), 3600);
+  }
+  setTimeout(start, 1000);
+  intro.addEventListener("click", start);
+  document.addEventListener("keydown", start, { once: true });
+}
+playIntro();
 </script>
 </body>
 </html>
