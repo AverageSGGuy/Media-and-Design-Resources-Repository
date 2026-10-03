@@ -22,17 +22,6 @@ This collection originally started as a private Google Doc. To make it more orga
 
 </font>
 
----
-
-### <font face="Newsreader, Georgia, serif" color="#1d1c1b">🧑‍💻 About the Author</font>
-
-<font face="Newsreader, Georgia, serif" color="#1d1c1b">
-
-Hi! I'm **Colin Low**, a freelance visual journalist based in Singapore. Currently, I am pursuing a Bachelor's degree in Public Policy and Global Affairs at Nanyang Technological University (NTU). 
-
-Feel free to connect or check out my work on Instagram: **[@berlin_snaps](https://instagram.com/berlin_snaps)**.
-
-</font>
 
 ---
 
@@ -71,3 +60,15 @@ I regularly update this repository with new resources as I discover them.
 > **License Terms Change Over Time**
 > <br>
 > Always verify each site's specific license terms before using an asset in paid or commercial client work.
+
+---
+
+### <font face="Newsreader, Georgia, serif" color="#1d1c1b">🧑‍💻 About the Author</font>
+
+<font face="Newsreader, Georgia, serif" color="#1d1c1b">
+
+Hi! I'm **Colin Low**, a freelance visual journalist based in Singapore. Currently, I am pursuing a Bachelor's degree in Public Policy and Global Affairs at Nanyang Technological University (NTU). 
+
+Feel free to connect or check out my work on Instagram: **[@berlin_snaps](https://instagram.com/berlin_snaps)**.
+
+</font>
